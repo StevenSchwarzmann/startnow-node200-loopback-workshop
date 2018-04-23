@@ -1,0 +1,50 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "MongoDB"
+  },
+  "AccessToken": {
+    "dataSource": "MongoDB",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "MongoDB",
+    "public": true,
+    "principalType": "ROLE",
+    "principalId": "$everyone",
+    "permission": "ALLOW",
+    "property": "role"
+  },
+  "RoleMapping": {
+    "dataSource": "MongoDB",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "MongoDB",
+    "public": false
+  },
+  "player": {
+    "dataSource": "MongoDB",
+    "public": true
+  },
+  "team": {
+    "dataSource": "MongoDB",
+    "public": true
+  }
+}
